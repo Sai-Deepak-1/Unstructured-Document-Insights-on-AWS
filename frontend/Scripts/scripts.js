@@ -1,1 +1,0 @@
-console.log("AWS DOC INSIGHTS");

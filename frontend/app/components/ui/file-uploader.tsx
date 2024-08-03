@@ -67,10 +67,13 @@ export default function FileUploader({
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://http://34.217.27.6/api/chat/upload/", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_CHAT_API}/upload/`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         alert(result.message); // Success alert
